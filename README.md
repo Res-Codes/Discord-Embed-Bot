@@ -31,34 +31,21 @@ Before you can use the bot, make sure you have the following prerequisites:
 
 ## Configuration
 
-### Option 1: Using `config.js` (default)
+### Using `.env` for Configuration
 
-1. **Bot Configuration:**
+We will replace the `config.js` file entirely by using environment variables with a `.env` file.
 
-   Edit the `config.js` file located in the `config/bot/` directory and insert your bot token and client ID:
+1. **Delete the `config.js` file:**
 
-   ```javascript
-   module.exports = {
-       token: 'your-bot-token-here',
-       clientId: 'your-client-id-here',
-   };
+   If you have a `config.js` file, you can delete it as it will no longer be needed:
+
+   ```bash
+   rm ./config/bot/config.js
    ```
 
-2. **Mod Configuration:**
+2. **Create a `.env` file in the root directory:**
 
-   In the `mods.json` file located in the `config/mods/` directory, you can configure the role ID for team members:
-
-   ```json
-   {
-       "teamRoleId": "roleid"
-   }
-   ```
-
-### Option 2: Using `.env` for Configuration
-
-If you prefer to use environment variables instead of hardcoding sensitive information in `config.js`, follow these steps:
-
-1. **Create a `.env` file in the root directory:**
+   In the root directory of your project, create a `.env` file and add your configuration variables:
 
    ```plaintext
    TOKEN=your-bot-token-here
@@ -66,7 +53,7 @@ If you prefer to use environment variables instead of hardcoding sensitive infor
    TEAM_ROLE_ID=roleid
    ```
 
-2. **Install the `dotenv` package:**
+3. **Install the `dotenv` package:**
 
    You'll need to install the `dotenv` package to load environment variables from the `.env` file:
 
@@ -74,35 +61,19 @@ If you prefer to use environment variables instead of hardcoding sensitive infor
    npm install dotenv
    ```
 
-3. **Modify the `config.js` file to use environment variables:**
+4. **Modify the code to use environment variables:**
 
-   Replace the content of `config.js` with:
+   Update your `index.js` and other necessary files to use the environment variables. Here's how you can do it in `index.js`:
 
    ```javascript
    require('dotenv').config();
+   const { Client, GatewayIntentBits, Partials, REST, Routes, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+   const fs = require('fs');
+   const path = require('path');
 
-   module.exports = {
-       token: process.env.TOKEN,
-       clientId: process.env.CLIENT_ID,
-   };
-   ```
-
-4. **Update the `mods.json` to also use environment variables (optional):**
-
-   If you want to use environment variables in `mods.json`, you need to modify how you load this configuration:
-
-   ```javascript
-   // config/mods/mods.json (Replace content)
-   {
-       "teamRoleId": process.env.TEAM_ROLE_ID
-   }
-   ```
-
-5. **Update the `index.js` to load mods configuration from environment variables:**
-
-   In `index.js`, update how the `mods` configuration is loaded:
-
-   ```javascript
+   // Using environment variables
+   const token = process.env.TOKEN;
+   const clientId = process.env.CLIENT_ID;
    const mods = {
        teamRoleId: process.env.TEAM_ROLE_ID
    };
@@ -143,7 +114,7 @@ The bot offers various commands that can be used via slash commands on Discord:
 
 If issues arise:
 
-1. Verify that the bot token and client ID are correctly entered in the `config.js` file or `.env` file.
+1. Verify that the bot token and client ID are correctly entered in the `.env` file.
 2. Ensure the bot has the correct permissions on the Discord server.
 3. Check the console for error messages and address them accordingly.
 
