@@ -1,4 +1,3 @@
-Hier ist eine vorgeschlagene `README.md` für dein Discord-Bot-Projekt. Diese Anleitung erklärt, wie man den Bot konfiguriert, startet und verwendet:
 
 ```markdown
 # Discord Bot
