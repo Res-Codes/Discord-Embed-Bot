@@ -1,5 +1,5 @@
 
-```markdown
+```
 # Discord Bot
 
 Ein einfacher Discord-Bot, der verschiedene Funktionen wie das Erstellen von Produkt-Embeds und das Verwalten von Produkten bietet.
@@ -99,5 +99,3 @@ Beiträge zu diesem Projekt sind willkommen. Erstelle bitte einen Pull-Request o
 
 Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der `LICENSE` Datei.
 ```
-
-Diese README.md Datei bietet eine umfassende Anleitung für Benutzer, um den Bot erfolgreich zu konfigurieren, zu starten und zu verwenden.
