@@ -1,4 +1,3 @@
-Hier ist die aktualisierte `README.md` mit einer zusätzlichen Anleitung, wie du die `config.js` durch eine `.env` Konfigurationsdatei ersetzen kannst, und welche Änderungen im Code notwendig sind:
 
 ```markdown
 # Discord Bot
