@@ -1,9 +1,9 @@
+Hier ist die aktualisierte `README.md` mit einer zusätzlichen Anleitung, wie du die `config.js` durch eine `.env` Konfigurationsdatei ersetzen kannst, und welche Änderungen im Code notwendig sind:
 
-```
+```markdown
 # Discord Bot
 
-A simple Discord bot that offers various functionalities like
-creating product embeds and managing products.
+A simple Discord bot that offers various functionalities like creating product embeds and managing products.
 
 ## Prerequisites
 
@@ -32,6 +32,8 @@ Before you can use the bot, make sure you have the following prerequisites:
 
 ## Configuration
 
+### Option 1: Using `config.js` (default)
+
 1. **Bot Configuration:**
 
    Edit the `config.js` file located in the `config/bot/` directory and insert your bot token and client ID:
@@ -51,6 +53,60 @@ Before you can use the bot, make sure you have the following prerequisites:
    {
        "teamRoleId": "roleid"
    }
+   ```
+
+### Option 2: Using `.env` for Configuration
+
+If you prefer to use environment variables instead of hardcoding sensitive information in `config.js`, follow these steps:
+
+1. **Create a `.env` file in the root directory:**
+
+   ```plaintext
+   TOKEN=your-bot-token-here
+   CLIENT_ID=your-client-id-here
+   TEAM_ROLE_ID=roleid
+   ```
+
+2. **Install the `dotenv` package:**
+
+   You'll need to install the `dotenv` package to load environment variables from the `.env` file:
+
+   ```bash
+   npm install dotenv
+   ```
+
+3. **Modify the `config.js` file to use environment variables:**
+
+   Replace the content of `config.js` with:
+
+   ```javascript
+   require('dotenv').config();
+
+   module.exports = {
+       token: process.env.TOKEN,
+       clientId: process.env.CLIENT_ID,
+   };
+   ```
+
+4. **Update the `mods.json` to also use environment variables (optional):**
+
+   If you want to use environment variables in `mods.json`, you need to modify how you load this configuration:
+
+   ```javascript
+   // config/mods/mods.json (Replace content)
+   {
+       "teamRoleId": process.env.TEAM_ROLE_ID
+   }
+   ```
+
+5. **Update the `index.js` to load mods configuration from environment variables:**
+
+   In `index.js`, update how the `mods` configuration is loaded:
+
+   ```javascript
+   const mods = {
+       teamRoleId: process.env.TEAM_ROLE_ID
+   };
    ```
 
 ## Starting the Bot
@@ -88,7 +144,7 @@ The bot offers various commands that can be used via slash commands on Discord:
 
 If issues arise:
 
-1. Verify that the bot token and client ID are correctly entered in the `config.js` file.
+1. Verify that the bot token and client ID are correctly entered in the `config.js` file or `.env` file.
 2. Ensure the bot has the correct permissions on the Discord server.
 3. Check the console for error messages and address them accordingly.
 
