@@ -2,50 +2,50 @@
 ```
 # Discord Bot
 
-Ein einfacher Discord-Bot, der verschiedene Funktionen wie das Erstellen von Produkt-Embeds
-und das Verwalten von Produkten bietet.
+A simple Discord bot that offers various functionalities like
+creating product embeds and managing products.
 
-## Voraussetzungen
+## Prerequisites
 
-Bevor du den Bot verwenden kannst, stelle sicher, dass du folgende Voraussetzungen erfüllst:
+Before you can use the bot, make sure you have the following prerequisites:
 
-- Node.js (v14 oder höher)
-- Ein Discord-Bot-Token ([hier](https://discord.com/developers/applications) erstellen)
-- Ein Discord-Server, auf dem du den Bot verwenden möchtest
+- Node.js (v14 or higher)
+- A Discord bot token ([create one here](https://discord.com/developers/applications))
+- A Discord server where you want to use the bot
 
 ## Installation
 
-1. **Repository klonen:**
+1. **Clone the repository:**
 
    ```bash
    git clone <repository-url>
-   cd <repository-verzeichnis>
+   cd <repository-directory>
    ```
 
-2. **Abhängigkeiten installieren:**
+2. **Install dependencies:**
 
-   Stelle sicher, dass du im Hauptverzeichnis des Projekts bist und führe dann folgenden Befehl aus:
+   Ensure you're in the project's root directory and run the following command:
 
    ```bash
    npm install
    ```
 
-## Konfiguration
+## Configuration
 
-1. **Bot-Konfiguration:**
+1. **Bot Configuration:**
 
-   Bearbeite die Datei `config.js` im Verzeichnis `config/bot/` und trage dein Bot-Token und die Client-ID ein:
+   Edit the `config.js` file located in the `config/bot/` directory and insert your bot token and client ID:
 
    ```javascript
    module.exports = {
-       token: 'dein-bot-token-hier',
-       clientId: 'deine-client-id-hier',
+       token: 'your-bot-token-here',
+       clientId: 'your-client-id-here',
    };
    ```
 
-2. **Mod-Konfiguration:**
+2. **Mod Configuration:**
 
-   In der Datei `mods.json` im Verzeichnis `config/mods/` kannst du die Rolle für Teammitglieder konfigurieren:
+   In the `mods.json` file located in the `config/mods/` directory, you can configure the role ID for team members:
 
    ```json
    {
@@ -53,50 +53,50 @@ Bevor du den Bot verwenden kannst, stelle sicher, dass du folgende Voraussetzung
    }
    ```
 
-## Starten des Bots
+## Starting the Bot
 
-1. **Bot starten:**
+1. **Start the Bot:**
 
-   Führe im Hauptverzeichnis folgenden Befehl aus:
+   In the root directory, run the following command:
 
    ```bash
    node index.js
    ```
 
-   Wenn alles richtig konfiguriert ist, sollte der Bot starten und in der Konsole anzeigen, dass er online ist.
+   If everything is correctly configured, the bot should start, and you'll see a message in the console indicating that it is online.
 
-2. **Befehle registrieren:**
+2. **Register Commands:**
 
-   Der Bot registriert automatisch alle Befehle beim Start. Stelle sicher, dass du die entsprechenden Slash-Befehle auf deinem Discord-Server verwenden kannst.
+   The bot automatically registers all commands upon startup. Ensure that the corresponding slash commands are available on your Discord server.
 
-## Verwendung
+## Usage
 
-### Befehle
+### Commands
 
-Der Bot bietet verschiedene Befehle, die über Slash-Befehle in Discord verwendet werden können:
+The bot offers various commands that can be used via slash commands on Discord:
 
-- `/cp`: Erstelle ein Produkt-Embed mit einem Formular.
-- `/mp`: Sende ein Embed mit Schaltflächen zur Produktverwaltung.
+- `/cp`: Create a product embed using a form.
+- `/mp`: Send an embed with buttons for product management.
 
-### Beispiel zur Produktverwaltung
+### Product Management Example
 
-- **Produkt hinzufügen**: Verwende den entsprechenden Button im Verwaltungs-Embed, um ein Produkt hinzuzufügen.
-- **Produkt entfernen**: Wähle das zu entfernende Produkt aus und bestätige.
-- **Produkt bearbeiten**: Bearbeite den Namen oder Preis eines Produkts über das Verwaltungs-Embed.
+- **Add Product**: Use the appropriate button in the management embed to add a product.
+- **Remove Product**: Select the product to remove and confirm.
+- **Edit Product**: Edit the name or price of a product using the management embed.
 
-## Fehlerbehebung
+## Troubleshooting
 
-Falls Probleme auftreten:
+If issues arise:
 
-1. Überprüfe, ob das Bot-Token und die Client-ID korrekt in der `config.js` Datei eingetragen sind.
-2. Stelle sicher, dass der Bot über die richtigen Berechtigungen auf dem Discord-Server verfügt.
-3. Überprüfe die Konsole auf Fehlermeldungen und behebe sie entsprechend.
+1. Verify that the bot token and client ID are correctly entered in the `config.js` file.
+2. Ensure the bot has the correct permissions on the Discord server.
+3. Check the console for error messages and address them accordingly.
 
-## Mitwirken
+## Contributing
 
-Beiträge zu diesem Projekt sind willkommen. Erstelle bitte einen Pull-Request oder öffne ein Issue, wenn du Vorschläge oder Probleme hast.
+Contributions to this project are welcome. Please create a pull request or open an issue if you have suggestions or encounter problems.
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der `LICENSE` Datei.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 ```
