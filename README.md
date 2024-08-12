@@ -2,7 +2,8 @@
 ```
 # Discord Bot
 
-Ein einfacher Discord-Bot, der verschiedene Funktionen wie das Erstellen von Produkt-Embeds und das Verwalten von Produkten bietet.
+Ein einfacher Discord-Bot, der verschiedene Funktionen wie das Erstellen von Produkt-Embeds
+und das Verwalten von Produkten bietet.
 
 ## Voraussetzungen
 
