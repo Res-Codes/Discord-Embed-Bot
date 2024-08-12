@@ -31,6 +31,29 @@ Before you can use the bot, make sure you have the following prerequisites:
 
 ## Configuration
 
+### Option 1: Using `config.js` (default)
+
+1. **Bot Configuration:**
+
+   Edit the `config.js` file located in the `config/bot/` directory and insert your bot token and client ID:
+
+   ```javascript
+   module.exports = {
+       token: 'your-bot-token-here',
+       clientId: 'your-client-id-here',
+   };
+   ```
+
+2. **Mod Configuration:**
+
+   In the `mods.json` file located in the `config/mods/` directory, you can configure the role ID for team members:
+
+   ```json
+   {
+       "teamRoleId": "roleid"
+   }
+   ```
+
 ### Using `.env` for Configuration
 
 We will replace the `config.js` file entirely by using environment variables with a `.env` file.
